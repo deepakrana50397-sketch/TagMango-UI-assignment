@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Design tokens ===== */
+:root {
+  --bg: 246 247 251;        /* page background */
+  --panel: 255 255 255;     /* header/panels */
+  --card: 255 255 255;
+  --text: 17 24 39;         /* slate-900-ish */
+  --muted: 107 114 128;     /* gray-500-ish */
+  --border: 229 231 235;    /* gray-200-ish */
+  --shadow: 0 0 0;
+  --brand: 16 185 129;      /* emerald */
+}
+
+.dark {
+  --bg: 10 10 12;
+  --panel: 20 20 23;
+  --card: 24 24 27;
+  --text: 244 244 245;
+  --muted: 161 161 170;
+  --border: 63 63 70;
+  --shadow: 0 0 0;
+  --brand: 52 211 153;
+}
+
+html, body { height: 100%; }
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
+
+/* subtle global smoothness */
+* {
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
