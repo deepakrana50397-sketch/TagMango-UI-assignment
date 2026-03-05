@@ -2,36 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Design tokens ===== */
 :root {
-  --bg: 246 247 251;        /* page background */
-  --panel: 255 255 255;     /* header/panels */
+  --bg: 246 245 255;           /* lavender bg like figma */
+  --panel: 255 255 255;
   --card: 255 255 255;
-  --text: 17 24 39;         /* slate-900-ish */
-  --muted: 107 114 128;     /* gray-500-ish */
-  --border: 229 231 235;    /* gray-200-ish */
-  --shadow: 0 0 0;
-  --brand: 16 185 129;      /* emerald */
+  --text: 17 24 39;
+  --muted: 107 114 128;
+  --border: 229 231 235;
+
+  --brand: 16 185 129;
+
+  --shadow-soft: 0 12px 30px rgba(17, 24, 39, 0.10);
+  --shadow-card: 0 10px 25px rgba(17, 24, 39, 0.08);
 }
 
 .dark {
-  --bg: 10 10 12;
-  --panel: 20 20 23;
-  --card: 24 24 27;
+  --bg: 10 10 14;
+  --panel: 20 20 24;
+  --card: 24 24 28;
   --text: 244 244 245;
   --muted: 161 161 170;
   --border: 63 63 70;
-  --shadow: 0 0 0;
+
   --brand: 52 211 153;
+
+  --shadow-soft: 0 18px 60px rgba(0,0,0,0.60);
+  --shadow-card: 0 12px 28px rgba(0,0,0,0.55);
 }
 
 html, body { height: 100%; }
+
 body {
   background: rgb(var(--bg));
   color: rgb(var(--text));
 }
 
-/* subtle global smoothness */
-* {
-  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
-}
+/* IMPORTANT: if you had any debug outline like *{outline:...} remove it */

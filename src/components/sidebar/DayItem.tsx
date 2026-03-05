@@ -4,13 +4,11 @@ export function DayItem({
   label,
   selected,
   locked,
-  blurred,
   onClick,
 }: {
   label: string;
   selected: boolean;
   locked?: boolean;
-  blurred?: boolean;
   onClick: () => void;
 }) {
   return (
@@ -19,21 +17,22 @@ export function DayItem({
       disabled={locked}
       onClick={onClick}
       className={cn(
-        "flex w-full items-center justify-between rounded-full px-4 py-3 text-left",
-        "transition-all duration-200",
+        "w-full rounded-full px-5 py-3",
+        "flex items-center justify-between text-left",
+        "transition-colors duration-150",
         selected
-          ? "bg-white shadow-sm dark:bg-zinc-900"
-          : "hover:bg-black/5 dark:hover:bg-white/5",
-        locked && "cursor-not-allowed opacity-55",
-        blurred && "opacity-75"
+          ? "bg-white text-[rgb(var(--text))]"
+          : "bg-white/45 hover:bg-white/65",
+        "border border-transparent",
+        selected && "shadow-[0_8px_18px_rgba(0,0,0,0.06)]",
+        locked && "opacity-60 cursor-not-allowed"
       )}
     >
-      <span className="text-sm font-medium">{label}</span>
+      <span className="text-sm font-semibold">{label}</span>
 
-      <span aria-hidden="true" className="text-sm text-[rgb(var(--muted))]">
-        {selected ? "✅" : locked ? "🔒" : blurred ? "⏳" : ""}
+      <span className="text-sm text-[rgb(var(--muted))]" aria-hidden="true">
+        {selected ? "✅" : locked ? "🔒" : ""}
       </span>
     </button>
   );
 }
-

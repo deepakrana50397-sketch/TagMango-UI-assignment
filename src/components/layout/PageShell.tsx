@@ -6,12 +6,19 @@ export function PageShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-6 md:px-6">
-      <div className="grid gap-6 md:grid-cols-[320px_1fr]">
-        <aside className="md:sticky md:top-[84px] md:self-start">
+    <div className="mx-auto w-full max-w-[1440px] px-6 py-6">
+      {/* 1 col by default, 2 cols from lg and above */}
+      <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
+        <aside className="lg:sticky lg:top-[80px] lg:self-start">
           {sidebar}
         </aside>
-        <main className="min-w-0">{children}</main>
+
+        <main className="min-w-0">
+          {/* center the feed column inside right panel */}
+          <div className="mx-auto w-full max-w-[720px] space-y-6">
+            {children}
+          </div>
+        </main>
       </div>
     </div>
   );

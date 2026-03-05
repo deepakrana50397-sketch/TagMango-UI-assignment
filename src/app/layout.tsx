@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import type { ReactNode } from "react";
 
@@ -8,9 +8,12 @@ export const metadata: Metadata = {
   description: "TagMango UI assignment",
 };
 
-type RootLayoutProps = Readonly<{ children: ReactNode }>;
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>

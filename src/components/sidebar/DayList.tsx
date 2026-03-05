@@ -13,13 +13,12 @@ export function DayList({
   onSelect: (id: number) => void;
 }) {
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       {days.map((d) => (
         <DayItem
           key={d.id}
           label={d.label}
           locked={d.locked}
-          blurred={d.blurred}
           selected={d.id === selectedDay}
           onClick={() => onSelect(d.id)}
         />
@@ -27,4 +26,3 @@ export function DayList({
     </div>
   );
 }
-
